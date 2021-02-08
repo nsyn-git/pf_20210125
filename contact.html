@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Grand Slam Tours</title>
+    <meta name="description" content="グランドスラム観戦ツアー専門のサイト">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--  リセットCSSの読込 ※オリジナルCSSよりも先に記述しておくこと※  -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!--  Googleフォント設定  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    <!--  オリジナルCSSの読込  -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" sizes="24x24" href="images/icon-24x24.png">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+<body>
+  <header class="page-header wrapper"><!--クラス名を複数設定-->
+    <p>
+      <a href="index.html">
+        <img src="images/gst_logo.png" alt="GlandSlamToursロゴ " class="logo">
+      </a>
+    </p>
+      
+      <nav class="pc-nav">
+          <ul class="main-nav">
+            <li><a href="au.html"><span>Australian Open</span></a></li>
+            <li><a href="fr.html"><span>French Open</span></a></li>
+            <li><a href="uk.html"><span>Wimbledon</span></a></li>
+            <li><a href="usa.html"><span>US Open</span></a></li>
+            <li><a href="company.html"><span>Company</span></a></li>
+            <li><a href="contact.html"><span>Contact</span></a></li>
+          </ul>
+      </nav>
+      
+<!--            ハンバーガーメニュー用-->
+      <div class="header-logo-menu">
+        <div id="nav-drawer">
+            <input id="nav-input" type="checkbox" class="nav-unshown">
+            <label id="nav-open" for="nav-input"><span></span></label>
+            <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+            <div id="nav-content">
+              
+              <nav>
+                <ul class="h-nav">
+                  <li><a href="au.html">Australian Open</a></li>
+                  <li><a href="fr.html">French Open</a></li>
+                  <li><a href="uk.html">Wimbledon</a></li>
+                  <li><a href="usa.html">US Open</a></li>
+                  <li><a href="company.html">Company</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+        </div>
+<!--              <div class="logo-area">LOGO</div>-->
+      </div>
+  </header>
+        <!--/.page-header-->
+        <div class="sub-header">
+          <div class="sub-header_inner">
+            <h1>Contact</h1>
+          </div>
+        </div>
+        
+    <div id="home" class="big-bg">
+        <div class="home-contact wrapper">
+          <div class="form_body">
+            <form class="form">
+              <div class="form_item">
+                <div class="form_title">
+                  観戦ツアーを選択<span>※必須</span>
+                </div>
+                <select name="tour" class="form_select">
+                  <option value="ao">
+                    全豪オープン（オーストラリア）
+                  </option>
+                  <option value="ao">
+                    全仏オープン（フランス）
+                  </option>
+                  <option value="ao">
+                    ウィンブルドン（イギリス）
+                  </option>
+                  <option value="ao">
+                    全米オープン（アメリカ）
+                  </option>
+                </select>
+              </div>
+              
+              <div class="form_item">
+                <label for="name" class="form_title">お名前<span>※必須</span></label>
+                <input type="text" id="name">
+              </div>
+              
+              <div class="form_item">
+                <label for="email" class="form_title">メールアドレス<span>※必須</span></label>
+                <input type="email" id="email">
+              </div>
+              
+              <div class="form_item">
+                <label for="tel" class="form_title">電話番号<span>※必須</span></label>
+                <input type="tel" id="tel">
+              </div>
+
+              <div class="form_item">
+                <div class="form_title">
+                  人数を選択<span>※必須</span>
+                </div>
+                <input type="radio" id="type1" name="number" value="1"><label for="type1">1名</label>
+                <input type="radio" id="type2" name="number" value="2"><label for="type2">2名</label>
+                <input type="radio" id="type3" name="number" value="3"><label for="type3">3名</label>
+                <input type="radio" id="type4" name="number" value="4"><label for="type4">4名</label>
+              </div>
+
+              <div class="form_item">
+                <label for="date_d" class="form_title">出国日付を選択<span>※必須</span></label>
+                <input type="date" id="date_d">
+              </div>
+              <div class="form_item">
+                <label for="date_r" class="form_title">帰国日付を選択<span>※必須</span></label>
+                <input type="date" id="date_r">
+              </div>
+
+              <div class="form_item">
+                <div class="form_title">
+                  保険
+                </div>
+                <input type="checkbox" name="hoken" value="h" id="hoken">
+                <label for="hoken">
+                  旅行傷害保険(任意)の加入を希望する。<span class="note">（不要の方はチェックを外してください）</span>
+                </label>
+              </div>
+              
+              <div class="form_item">
+                <label for="message" class="form_title">
+                  メッセージ
+                </label>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="オプショナルツアーのご希望等ありましたら、メッセージを記入してください"></textarea>
+              </div>
+              
+              <div class="form_btn">
+                <button type="submit" class="f_btn">
+                  送信する
+                </button>
+              </div>
+              
+          </form>
+
+          </div>
+        </div><!-- /.home-content -->
+    </div><!--/#home-->
+    <footer>
+      <div class="wrapper">
+        <ul>
+          <li><a href="index.html"><span>HOME</span></a></li>
+          <li><a href="au.html"><span>Australian Open</span></a></li>
+          <li><a href="fr.html"><span>French Open</span></a></li>
+          <li><a href="uk.html"><span>Wimbledon</span></a></li>
+          <li><a href="usa.html"><span>US Open</span></a></li>
+          <li><a href="company.html"><span>Company</span></a></li>
+          <li><a href="contact.html"><span>Contact</span></a></li>
+        </ul>
+        <p><small>&copy;2020 Grand Slam Tours</small></p>
+      </div>
+    <!--/.wrapper-->
+    </footer>
+</body>
+</html>
