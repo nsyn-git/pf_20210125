@@ -22,7 +22,8 @@ a{/*リンク文字の下線をなしにする*/
 }
 
 img{/*画像が親ボックスからはみ出さないように*/
-    max-width: 100%;
+    /* max-width: 100%; */
+    /* width:100%; */
 }
 
 .wrapper { /*ページの最大幅と余白を指定*/
@@ -220,15 +221,15 @@ img{/*画像が親ボックスからはみ出さないように*/
 }
 section{
   max-width: 950px;
-  min-width: 550px;
+  min-width: 250px;
   margin-bottom: 20px;
 }
 
 /*.section_img img,*/
 .section_atc{
-  width: 100vw;
+  /* width: 100vw;
   max-width: 550px;
-  min-width: 400px;
+  min-width: 400px; */
 }
 
 .section{
@@ -236,11 +237,15 @@ section{
   flex-direction: column;
 }
 
-.sction_img img{
-  width: 100vw;
+.sction_img{
+  /* width: 100vw; */
   max-width: 550px;
-  min-width: 400px;
+  min-width: 280px;
 /*  max-height: 420px;*/
+}
+
+.section_img img{
+  width: 100%;
 }
 
 .section_title{
@@ -601,6 +606,14 @@ footer a:hover{/*リンク文字のホバー時の色*/
 
   .section_title{
     font-size: 18px;
+  }
+
+  .section_title{
+    font-size: 16px;
+  }
+
+  .section_atc{
+    font-size: 12px;
   }
 
   .media{
