@@ -13,8 +13,12 @@
 
     <!--  オリジナルCSSの読込  -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/js.css">
+
     <link rel="icon" type="image/png" sizes="24x24" href="images/icon-24x24.png">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
   <header class="page-header wrapper">
@@ -24,7 +28,7 @@
       </a>
     </p>
       
-      <nav class="pc-nav">
+      <div class="pc-nav">
           <ul class="main-nav">
             <li><a href="au.html"><span>Australian Open</span></a></li>
             <li><a href="fr.html"><span>French Open</span></a></li>
@@ -33,30 +37,33 @@
             <li><a href="company.html"><span>Company</span></a></li>
             <li><a href="contact.html"><span>Contact</span></a></li>
           </ul>
-      </nav>
-      
-<!--            ハンバーガーメニュー用-->
-      <div class="header-logo-menu">
-        <div id="nav-drawer">
-            <input id="nav-input" type="checkbox" class="nav-unshown">
-            <label id="nav-open" for="nav-input"><span></span></label>
-            <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-            <div id="nav-content">
-              
-              <nav>
-                <ul class="h-nav">
-                  <li><a href="au.html">Australian Open</a></li>
-                  <li><a href="fr.html">French Open</a></li>
-                  <li><a href="uk.html">Wimbledon</a></li>
-                  <li><a href="usa.html">US Open</a></li>
-                  <li><a href="company.html">Company</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
-        </div>
-<!--              <div class="logo-area">LOGO</div>-->
       </div>
+      
+<!-- ハンバーガーメニュー用２ -->
+<div id="navArea">
+  <nav>
+    <div class="inner">
+      <ul>
+        <li><a href="au.html">Australian Open</a></li>
+        <li><a href="fr.html">French Open</a></li>
+        <li><a href="uk.html">Wimbledon</a></li>
+        <li><a href="usa.html">US Open</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="toggle_btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div id="mask"></div>
+
+</div>
+<!-- ハンバーガーメニューここまで -->
   </header>
         <!--/.page-header-->
         <div class="sub-header">
@@ -195,6 +202,26 @@
       const counter = countdown(goal);
       
       let timer = setInterval(recalc,1000);
+
+      // ハンバーガーメニュー
+      (function($) {
+        let $nav   = $('#navArea');
+        let $btn   = $('.toggle_btn');
+        let $mask  = $('#mask');
+        let open   = 'open'; // class
+        // menu open close
+        $btn.on( 'click', function() {
+          if ( ! $nav.hasClass( open ) ) {
+            $nav.addClass( open );
+          } else {
+            $nav.removeClass( open );
+          }
+        });
+        // mask close
+        $mask.on('click', function() {
+          $nav.removeClass( open );
+        });
+      } )(jQuery);
     </script>
 </body>
 </html>
